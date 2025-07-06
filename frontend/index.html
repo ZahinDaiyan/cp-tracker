@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CP Tracker</title>
+  <link rel="stylesheet" href="style/blog.css">
+</head>
+<body>
+
+  <h2>Codeforces CP Tracker</h2>
+
+  <!-- Handle Input -->
+  <input type="text" id="handleInput" placeholder="Enter Codeforces Handle" />
+  <button onclick="fetchProblems()">Track</button>
+
+  <!-- Filter Controls -->
+  <div style="margin-top: 20px;">
+    <label for="ratingFilter">Filter by Rating:</label>
+    <select id="ratingFilter" onchange="applyFilters()">
+      <option value="">All</option>
+      <option value="800">800</option>
+      <option value="900">900</option>
+      <option value="1000">1000</option>
+      <option value="1100">1100</option>
+      <option value="1200">1200</option>
+      <option value="1300">1300</option>
+    </select>
+
+    <div style="margin-top: 10px;">
+      <label>Filter by Tags:</label>
+      <div class="tag-dropdown" id="tagDropdown">
+        <!-- Tag options will be injected by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Solved Problems Table -->
+  <table id="problemsTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Problem</th>
+        <th>Contest</th>
+        <th>Rating</th>
+        <th>Tags</th>
+      </tr>
+    </thead>
+    <tbody id="problemsBody">
+      <!-- Data rows go here -->
+    </tbody>
+  </table>
+
+  <!-- JS Script -->
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>
